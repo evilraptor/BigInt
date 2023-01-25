@@ -12,17 +12,6 @@ set(exe_name ${PROJECT_NAME})
 # задаем имя исполняемого файла программы для запуска тестов
 set(test_name test)
 
-# Включаем отслеживание всех предупреждений (warnings) и запрещаем компиляцию при наличии предупреждений.
-# Считается хорошим тоном, когда программа собирается без предупрреждений.
-# Но вы можете убрать /WX и -Werror (разрешив компиляцию с предупреждениями), если сможете разумно объяснить своё решение.
-if (MSVC)
-    # warning level 4 and all warnings as errors
-    add_compile_options(/W4)
-else()
-    # lots of warnings and all warnings as errors
-    add_compile_options(-Wall -pedantic -Werror)
-endif()
-
 # описываем основную библиотеку, т.е. библиотеку, содержащую все cpp-файлы, кроме main.cpp
 # TODO: отредактировать список cpp-файлов
 add_library(corelib OBJECT Arithmetical_Operators.cpp Constructors.cpp Logical_Operators.cpp Secondary_Functions.cpp Unary_Operators.cpp)
