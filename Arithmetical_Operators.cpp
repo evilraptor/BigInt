@@ -1,18 +1,5 @@
 #include "Class_BigInt.h"
 
-/*BigInt& BigInt::operator +=(const BigInt& number)
-{
-	if (((*this).sign && number.sign) || (!(*this).sign && !number.sign))
-	{
-		int add_next_digit = 0;
-		int max = std::max((*this).size, number.size);
-		int* result_number = new int[max + 1];
-		std::fill(result_number, result_number + max + 1, '\0')
-	}
-}*/
-
-#include "Class_BigInt.h"
-
 BigInt operator +(const BigInt& number1, const BigInt& number2)
 {
 	BigInt tmp = number1;
@@ -45,7 +32,7 @@ BigInt& BigInt::operator +=(const BigInt& other) //*this += other
 		long long i = size - 1;
 		long long j = other.size - 1;
 		long long k = tmp_size - 1;
-		for (i, j, k; i >= 0 and j >= 0; i--, j--, k--)
+		for (i, j, k; ((i >= 0) && (j >= 0)); i--, j--, k--)
 		{
 			sum = (long long)digits[i] + (long long)other.digits[j] + add_next_digit;
 			add_next_digit = sum / base;
@@ -128,7 +115,7 @@ BigInt& BigInt::operator -=(const BigInt& other)
 		long long j = other.size - 1;
 		long long k = tmp_size - 1;
 
-		for (i, j, k; i >= 0 and j >= 0; i--, j--, k--)
+		for (i, j, k; ((i >= 0) && (j >= 0)); i--, j--, k--)
 		{
 			difference = (long long)digits[i] - (long long)other.digits[j];
 			if (difference >= 0)
