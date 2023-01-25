@@ -7,7 +7,7 @@ int main()
     //BigInt number1 = BigInt(str1);
     //BigInt number2 = BigInt(str2);
 
-    //std::cout << number1 + number2;
+    //std::cout << number1 + BigInt(2);
 
     BigInt number3 = BigInt(-2);
     BigInt number4 = BigInt(-4);
@@ -15,6 +15,7 @@ int main()
     std::cout << number3;
 
     //std::cout << ((BigInt(1) * BigInt(0))==BigInt(0));
-
+    //std::cout << ((BigInt(2) + BigInt(3)) * BigInt(4));
+    //std::cout << ((BigInt(2) + BigInt(3)) * BigInt(0));
     return 0;
 }
