@@ -51,7 +51,7 @@ BigInt::BigInt(std::string str)
 			throw std::invalid_argument("Invalid syntax. String contains unacceptable symbols.");
 	}
 
-	while (str.size() != 1 and str[0] == '0')
+	while ((str.size() != 1) && (str[0] == '0'))
 		str.erase(str.begin());
 
 	if (str.size() % base_length == 0)
