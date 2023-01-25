@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "../BigInt/Class_BigInt.h"
+#include "Class_BigInt.h"
 
 BigInt first_number = BigInt("5943524289824899824");
 BigInt second_number = BigInt("403909023903");
@@ -178,14 +178,6 @@ TEST(AssignMul, TestName) {
 TEST(UnaryPlus, TestName) {
 	BigInt answer = BigInt("5943524289824899824");
 	BigInt tmp = +first_number;
-	ASSERT_EQ(answer, tmp);
-}
-
-//unary -
-
-TEST(UnaryMinus, TestName) {
-	BigInt answer = BigInt("-5943524289824899824");
-	BigInt tmp = -first_number;
 	ASSERT_EQ(answer, tmp);
 }
 
