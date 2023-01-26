@@ -245,7 +245,8 @@ BigInt& BigInt::operator *=(const BigInt& other)
 	{
 		sign = true;
 		*this *= other;
-		sign = false;
+		if(digits[0]==0)sign = true;
+		else sign = false;
 		return *this;
 	}
 	else
@@ -253,7 +254,8 @@ BigInt& BigInt::operator *=(const BigInt& other)
 		BigInt tmp = other;
 		tmp.sign = true;
 		*this *= tmp;
-		sign = false;
+		if (digits[0] == 0)sign = true;
+		else sign = false;
 		return *this;
 	}
 }
