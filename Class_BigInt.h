@@ -29,8 +29,11 @@ public:
 	};
 	BigInt operator-() const
 	{
+		//if (digits[0] == 0)sign = true;
+		//else sign = false;
 		BigInt tmp = *this;
-		tmp.sign = (false == (*this).sign);
+		if (tmp.digits[0] == 0)tmp.sign = true;
+		else tmp.sign = (false == (*this).sign);
 		return tmp;
 	};
 
